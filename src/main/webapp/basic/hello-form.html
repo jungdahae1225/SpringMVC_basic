@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>서버 관련만 확인하면 되면 되도록,, postman으로 테스팅하자,</title>
+    <!----HTML을 body로 전달할 경우, POST방식만 허용된다. PUT, PATCH 방식 안됨. -->
+</head>
+<body>
+<form action="/request-param" method="post">
+    username: <input type="text" name="username" />
+    age: <input type="text" name="age" />
+    <button type="submit">전송</button>
+</form>
+</body>
+</html>
