@@ -21,7 +21,7 @@ public class MvcMemberSaveServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //컨트롤러의 역할1.파라미터 받기
+        //컨트롤러의 역할1.파라미터 받기 & 파라미터에 오류는 없는지 등을 검사.
         String username = request.getParameter("username");
         int age = Integer.parseInt(request.getParameter("age"));
 
