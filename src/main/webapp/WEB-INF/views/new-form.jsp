@@ -5,7 +5,7 @@
   <title>회원 등록 폼 - 뷰</title>
 </head>
 <body>
-<!-- 상대경로 사용, [현재 URL이 속한 계층 경로 + /save] -->
+<!-- 연습할 땐 편의상 상대경로 사용, [현재 URL이 속한 계층 경로 + /save] ====> 실개발에서는 되도록 사용x -->
 <form action="save" method="post">
   username: <input type="text" name="username" />
   age: <input type="text" name="age" />
