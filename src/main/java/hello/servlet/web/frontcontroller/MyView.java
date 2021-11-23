@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Map;
 
 public class MyView {
     private String viewPath;
@@ -19,5 +20,18 @@ public class MyView {
     public void render(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
         dispatcher.forward(request, response);
+    }
+
+    public void render(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        modelToRequestAttribute(model, request);//model로 넘어온 정보를 모두 꺼내서 request에 담아주는 메서드를 실행한다.
+
+        //이하 로직은 기존 랜더와 같음.
+        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+        dispatcher.forward(request, response);
+    }
+
+    private void modelToRequestAttribute(Map<String, Object> model, HttpServletRequest request) {
+        //model로 넘어온 정보를 모두 꺼낸다.
+        model.forEach((key, value) -> request.setAttribute(key, value)); //key와 value라는 변수로 꺼내서 request에 다시 저장한다.
     }
 }
