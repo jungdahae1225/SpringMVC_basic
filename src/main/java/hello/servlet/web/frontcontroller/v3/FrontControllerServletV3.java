@@ -64,6 +64,7 @@ public class FrontControllerServletV3 extends HttpServlet {
         request.getParameterNames().asIterator() //넘어오는 request의 모든 파라미터 이름을 다 가져온다.
                 .forEachRemaining(paramName -> paramMap.put(paramName, request.getParameter(paramName))); //request에서 꺼낸 걸 map에 put하는 과정.
         return paramMap;
+
     }
 
     /*뷰 리졸버 컨트롤러가 반환하는 논리 뷰 이름을 실제 물리 뷰 결로로 변환하는 역할.
