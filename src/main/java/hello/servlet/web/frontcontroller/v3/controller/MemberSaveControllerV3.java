@@ -18,9 +18,11 @@ public class MemberSaveControllerV3 implements ControllerV3 {
 
     @Override
     public ModelView process(Map<String, String> paramMap) {
-        String username = paramMap.get("username");
-        int age = Integer.parseInt(paramMap.get("age"));
+        // 1.map으로 들어온 파라미터를 때내어내는 작업
+        String username = paramMap.get("username"); //map으로 넘어온 객체에서 username만 빼낸다.
+        int age = Integer.parseInt(paramMap.get("age"));//map으로 넘어온 객체에서 age만 빼낸다.
 
+        //2.떼어낸 파라미터를 저장소에 저장하는 방법
         Member member = new Member(username, age);
         memberRepository.save(member);
 

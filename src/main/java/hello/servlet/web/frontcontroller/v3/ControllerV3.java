@@ -15,6 +15,7 @@ public interface ControllerV3 { //다형성을 위해 인터페이스로 구현 
     //v2버전 MyView process(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 
     //v3 -v1과 v2에서 사용했던 서블릿 종속pt를 없앤다.
+    //process함수
     ModelView process(Map<String, String> paramMap);
 
 }

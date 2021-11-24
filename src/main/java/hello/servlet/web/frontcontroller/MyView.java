@@ -23,10 +23,13 @@ public class MyView {
     }
 
     public void render(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        modelToRequestAttribute(model, request);//model로 넘어온 정보를 모두 꺼내서 request에 담아주는 메서드를 실행한다.
 
-        //이하 로직은 기존 랜더와 같음.
-        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+        //v1-v2에서는 서블릿의 respose를 계속 끌고 다녔는데 v3에서 model과 view를 분리해 주었다.
+        //따라서 따로 분리한 애들을 넘겨받아 서블릿 요청 파라미터에 다시 넣어주는 작업이 필요하다.model로 넘어온 정보를 모두 꺼내서 request에 담아주는 메서드를 실행한다.
+        modelToRequestAttribute(model, request);
+
+        //이하 로직은 기존 랜더와 같음. => dispatcher를 통해 뿌리기
+        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath); // jsp는 .getRequestDispatcher를 통해 뿌리는데, 다른 기술들은 아닌 기술도 있으니 그깨그때 확인할 것
         dispatcher.forward(request, response);
     }
 
