@@ -18,7 +18,7 @@ import java.io.IOException;
  *회원 등록 폼 - 컨트롤러
  * ***/
 
-//서블릿을 컨트롤러로 사용한다.
+//컨트롤러 - Servlet & 뷰 - JSP & 모델 - HttpServletRequest
 @WebServlet(name = "mvcMemberFormServlet", urlPatterns = "/servlet-mvc/members/new-form")
 public class MvcMemberFormServlet extends HttpServlet {
     @Override
