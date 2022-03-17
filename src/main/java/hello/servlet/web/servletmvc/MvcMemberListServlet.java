@@ -16,7 +16,7 @@ import java.util.List;
  *회원 목록 조회 - 컨트롤러
  * ***/
 
-@WebServlet(name = "mvcMemberListServlet", urlPatterns = "/servlet-mvc/ members")
+@WebServlet(name = "mvcMemberListServlet", urlPatterns = "/servlet-mvc/members")
     public class MvcMemberListServlet extends HttpServlet {
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
