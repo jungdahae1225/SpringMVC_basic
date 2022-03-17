@@ -10,6 +10,7 @@ import java.util.Map;
  */
 public class MemberRepository {
 
+    //key는 id 값은 member로 저장할 것임
     private static Map<Long, Member> store = new HashMap<>(); //static 사용
     private static long sequence = 0L; //static 사용
     private static final MemberRepository instance = new MemberRepository();
